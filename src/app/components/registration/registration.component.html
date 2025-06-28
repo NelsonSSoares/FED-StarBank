@@ -1,1 +1,23 @@
-<p>registration works!</p>
+<div fxLayout="row" fxLayoutAlign="center">
+  <div fxLayout="column" fxFlex="1000px">
+    <form #newUserForm="ngForm" class="mt-60">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Cadastro de Usuário</mat-card-title>
+          <mat-card-subtitle>Preencha os campos abaixo para criar uma nova conta</mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-content class="mt-20">
+          <div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="16px">
+            <div class="column" fxFlex="800px">
+              <mat-form-field class="full-width">
+                <mat-label>Nome: </mat-label>
+                <input type="text" placeholder="José da Silva" matInput  name="nome" required>
+              </mat-form-field>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </form>
+  </div>
+</div>
