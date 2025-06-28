@@ -7,6 +7,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -27,6 +28,16 @@ import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
   templateUrl: './registration.component.html',
   styleUrl: './registration.component.scss'
 })
-export class RegistrationComponent {
+export class RegistrationComponent implements OnInit {
+
   updating: boolean = false;
+  snack: MatSnackBar = inject(MatSnackBar);
+
+  constructor() { }
+
+  ngOnInit(): void {
+
+  }
+
+
 }
