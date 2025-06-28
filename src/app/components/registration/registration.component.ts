@@ -28,5 +28,5 @@ import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
   styleUrl: './registration.component.scss'
 })
 export class RegistrationComponent {
-
+  updating: boolean = false;
 }
