@@ -44,7 +44,7 @@ export class RegistrationComponent implements OnInit {
     private router: Router
   ) { }
 
-
+// trazer mensagem de erros dinamicas
 
   ngOnInit(): void {
     this.newUserForm = this.formBuilder.group({
