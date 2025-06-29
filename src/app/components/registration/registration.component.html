@@ -1,6 +1,6 @@
 <div fxLayout="row" fxLayoutAlign="center">
   <div fxLayout="column" fxFlex="1000px">
-    <form #newUserForm="ngForm" class="mt-60">
+    <form [formGroup]="newUserForm" (ngSubmit)="createUser()" class="mt-60">
       <mat-card>
         <mat-card-header>
           <mat-card-title>Cadastro de Usuário</mat-card-title>
@@ -12,7 +12,7 @@
             <div class="column" fxFlex="800px">
               <mat-form-field class="full-width">
                 <mat-label>Nome: </mat-label>
-                <input type="text" placeholder="José" matInput  name="name" required>
+                <input type="text" placeholder="José" matInput  formControlName="name" required>
               </mat-form-field>
             </div>
           </div>
@@ -21,7 +21,7 @@
             <div class="column" fxFlex="800px">
               <mat-form-field class="full-width">
                 <mat-label>Sobrenome: </mat-label>
-                <input type="text" placeholder="Silva Santos" matInput  name="lastName" required>
+                <input type="text" placeholder="Silva Santos" matInput  formControlName="lastName" required>
               </mat-form-field>
             </div>
           </div>
@@ -30,7 +30,7 @@
             <div class="column" fxFlex="800px">
               <mat-form-field class="full-width">
                 <mat-label>CPF: </mat-label>
-                <input type="text" placeholder="123456789-10" mask="000.000.000-00" matInput  name="cpf" required>
+                <input type="text" placeholder="123456789-10" mask="000.000.000-00" matInput  formControlName="cpf" required>
               </mat-form-field>
             </div>
           </div>
@@ -39,7 +39,7 @@
             <div class="column" fxFlex="800px">
               <mat-form-field class="full-width">
                 <mat-label>Celular: </mat-label>
-                <input type="text" placeholder="11940028922" mask="(00) 00000-0000" matInput  name="phone" required>
+                <input type="text" placeholder="11940028922" mask="(00) 00000-0000" matInput  formControlName="phone" required>
               </mat-form-field>
             </div>
           </div>
@@ -48,7 +48,7 @@
             <div class="column" fxFlex="800px">
               <mat-form-field class="full-width">
                 <mat-label>Email: </mat-label>
-                <input type="email" placeholder="teste@teste.com" matInput  name="email" required>
+                <input type="email" placeholder="teste@teste.com" matInput  formControlName="email" required>
               </mat-form-field>
             </div>
           </div>
@@ -56,12 +56,8 @@
                 <mat-card-actions>
          <div fxLayout="row">
           <div fxLauout="column" class="full-width">
-            @if(!updating){
              <button mat-flat-button color="primary" type="submit"><mat-icon fontIcon="save"></mat-icon> Salvar</button>
-            }@else{
-             <button mat-flat-button color="primary"><mat-icon fontIcon="refresh"></mat-icon> Atualizar</button>
-            }
-             <button mat-flat-button color="accent" class="ml-5"><mat-icon fontIcon="backspace"></mat-icon> Limpar</button>
+             <button mat-flat-button color="accent" class="ml-5" (click)="resetForm()"><mat-icon fontIcon="backspace"></mat-icon> Limpar</button>
           </div>
          </div>
         </mat-card-actions>
