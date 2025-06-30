@@ -1,5 +1,5 @@
 <div fxLayout="row" fxLayoutAlign="center">
-  <div fxLayout="column" fxFlex="1000px">
+  <div fxLayout="column" fxFlex="1000px" fxFlex.md="50%" fxFlex.sm="90%" fxFlex.xs="100%">
     <form [formGroup]="newUserForm" (ngSubmit)="createUser()" class="mt-60">
       <mat-card>
         <mat-card-header>
@@ -9,7 +9,7 @@
 
         <mat-card-content class="mt-20">
           <div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="16px">
-            <div class="column" fxFlex="800px">
+            <div class="column" fxFlex="100%">
               <mat-form-field class="full-width">
                 <mat-label>Nome: </mat-label>
                 <input type="text" placeholder="José" matInput  formControlName="name" required>
@@ -18,7 +18,7 @@
           </div>
 
            <div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="16px">
-            <div class="column" fxFlex="800px">
+            <div class="column" fxFlex="100%">
               <mat-form-field class="full-width">
                 <mat-label>Sobrenome: </mat-label>
                 <input type="text" placeholder="Silva Santos" matInput  formControlName="lastName" required>
@@ -27,7 +27,7 @@
           </div>
 
            <div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="16px">
-            <div class="column" fxFlex="800px">
+            <div class="column" fxFlex="100%">
               <mat-form-field class="full-width">
                 <mat-label>CPF: </mat-label>
                 <input type="text" placeholder="123456789-10" mask="000.000.000-00" matInput  formControlName="cpf" required>
@@ -36,7 +36,7 @@
           </div>
 
            <div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="16px">
-            <div class="column" fxFlex="800px">
+            <div class="column" fxFlex="100%">
               <mat-form-field class="full-width">
                 <mat-label>Celular: </mat-label>
                 <input type="text" placeholder="11940028922" mask="(00) 00000-0000" matInput  formControlName="phone" required>
@@ -45,7 +45,7 @@
           </div>
 
            <div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="16px">
-            <div class="column" fxFlex="800px">
+            <div class="column" fxFlex="100%">
               <mat-form-field class="full-width">
                 <mat-label>Email: </mat-label>
                 <input type="email" placeholder="teste@teste.com" matInput  formControlName="email" required>
