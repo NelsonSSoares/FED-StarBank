@@ -16,9 +16,15 @@ export class UserService {
   ) { }
 
   createUser(user: UserRequest): Observable<UserRequest> {
-    return this.http.post<UserRequest>(this.API_URL+'/starbank/register', user);
+    return this.http.post<UserRequest>(this.API_URL + '/starbank/register', user);
+  }
+
+  getUserByEmail(email: string): Observable<UserRequest> {
+    return this.http.get<UserRequest>(`${this.API_URL}/starbank/users/email/${email}`);
   }
 
   loginUser(user: UserRequest) {
   }
+
+
 }

@@ -1,0 +1,49 @@
+<div flexLayout="row" fxLayoutAlign="center center">
+  <div fxLayout="column" fxFlex="1000px" fxFlex.md="50%" fxFlex.sm="90%" fxFlex.xs="100%">
+    <form [formGroup]="loginForm" (ngSubmit)="login()" class="mt-60">
+          <mat-card>
+      <mat-card-header>
+        <mat-card-title>Acesse a sua conta</mat-card-title>
+        <mat-card-subtitle>Preencha as suas informações nos campos abaixo para acessar a sua conta.</mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content class="mt-20">
+        <div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="16px">
+          <div class="column" fxFlex="100%">
+            <mat-form-field class="full-width">
+              <mat-label>Email: </mat-label>
+              <input type="email" placeholder="josesilva@teste.com" formControlName="username" matInput required>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="16px">
+          <div class="column" fxFlex="100%">
+            <mat-form-field class="full-width">
+              <mat-label>Senha: </mat-label>
+              <input formControlName="password" type="password" placeholder="********" matInput required>
+            </mat-form-field>
+          </div>
+        </div>
+      </mat-card-content>
+      <mat-card-actions fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="8px">
+
+        <div fxLayout="row" fxLayoutGap="8px">
+          <button mat-flat-button color="primary" type="submit">
+            <mat-icon fontIcon="account_circle"></mat-icon> LogIn
+          </button>
+          <button mat-flat-button color="accent" (click)="resetForm()">
+            <mat-icon fontIcon="backspace"></mat-icon> Limpar
+          </button>
+        </div>
+
+
+        <div fxLayout="row" fxLayoutAlign="center">
+          <a routerLink="/register" class="custom-links" (click)="forgotPassword()">Esqueci minha senha</a>
+        </div>
+      </mat-card-actions>
+
+    </mat-card>
+    </form>
+  </div>
+</div>
