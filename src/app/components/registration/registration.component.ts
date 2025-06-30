@@ -53,6 +53,7 @@ export class RegistrationComponent implements OnInit {
       cpf: ['', [Validators.required, Validators.minLength(11), Validators.maxLength(11)]],
       phone: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
 
