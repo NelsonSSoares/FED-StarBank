@@ -8,6 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { NgxMaskDirective } from 'ngx-mask';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -32,7 +33,8 @@ export class LoginComponent implements OnInit {
 
 
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private userService: UserService
   ) {}
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -41,8 +43,34 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  login(){
-
+  login(): void {
+    if (this.loginForm.valid) {
+      const loginData = this.loginForm.value;
+      this.userService.loginUser(loginData).subscribe({
+        next: (response) => {
+          // Handle successful login, e.g., store token, redirect
+          this.snack.open('Login realizado com sucesso!', 'Fechar', {
+            duration: 3000,
+            horizontalPosition: 'center',
+            verticalPosition: 'top'
+          });
+        },
+        error: (error) => {
+          // Handle login error
+          this.snack.open('Erro ao realizar login. Verifique suas credenciais.', 'Fechar', {
+            duration: 3000,
+            horizontalPosition: 'center',
+            verticalPosition: 'top'
+          });
+        }
+      });
+    } else {
+      this.snack.open('Por favor, preencha todos os campos corretamente.', 'Fechar', {
+        duration: 3000,
+        horizontalPosition: 'center',
+        verticalPosition: 'top'
+      });
+    }
   }
 
   resetForm(): void {

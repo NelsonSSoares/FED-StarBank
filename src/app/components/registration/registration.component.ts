@@ -61,7 +61,11 @@ export class RegistrationComponent implements OnInit {
     if (this.newUserForm.valid) {
       this.service.createUser(this.newUserForm.value).subscribe({
         next: (user) => {
-          this.snack.open('Usuário cadastrado com sucesso!', 'Fechar', { duration: 3000 });
+          this.snack.open('Usuário cadastrado com sucesso!', 'Fechar', {
+            duration: 3000,
+            horizontalPosition: 'center',
+            verticalPosition: 'top'
+           });
           this.router.navigate(['/login']);
         },
         error: (error) => {
