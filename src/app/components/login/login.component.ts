@@ -7,9 +7,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { NgxMaskDirective } from 'ngx-mask';
-import { UserService } from '../../services/user/user.service';
+import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth/auth.service';
+
 
 @Component({
   selector: 'app-login',
@@ -35,7 +35,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router,
   ) { }
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -51,8 +52,7 @@ export class LoginComponent implements OnInit {
         next: (response) => {
           console.log(response);
 
-          localStorage.setItem('accessToken', response.accessToken);
-          localStorage.setItem('refreshToken', response.refreshToken);
+          this.authService.setTokens(response); // Store tokens in local storage
 
           // Handle successful login, e.g., store token, redirect
           this.snack.open('Login realizado com sucesso!', 'Fechar', {
@@ -60,6 +60,9 @@ export class LoginComponent implements OnInit {
             horizontalPosition: 'center',
             verticalPosition: 'top'
           });
+
+          this.router.navigate(['/dashboard']); // Redirect to the dashboard or home page
+
         },
         error: (error) => {
           // Handle login error
