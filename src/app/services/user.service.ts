@@ -25,22 +25,4 @@ export class UserService {
     return this.http.get<UserRequest>(`${this.API_URL}/starbank/users/email/${email}`);
   }
 
-  loginUser(login: Login) : Observable<TokenDTO> {
-
-    let token = this.http.post<TokenDTO>(this.API_URL + '/starbank/auth/signin', login);
-    token.subscribe({
-      next: (response) => {
-        console.log('Login successful', response);
-        localStorage.setItem('accessToken', response.accessToken);
-        localStorage.setItem('refreshToken', response.refreshToken);
-      },
-      error: (error) => {
-        console.error('Login failed', error);
-      }
-    });
-    return token;
-
-  }
-
-
 }

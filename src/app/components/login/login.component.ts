@@ -9,6 +9,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { NgxMaskDirective } from 'ngx-mask';
 import { UserService } from '../../services/user.service';
+import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -34,7 +35,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private userService: UserService
+    private userService: UserService,
+    private authService: AuthService
   ) {}
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -46,7 +48,7 @@ export class LoginComponent implements OnInit {
   login(): void {
     if (this.loginForm.valid) {
       const loginData = this.loginForm.value;
-      this.userService.loginUser(loginData).subscribe({
+      this.authService.loginUser(loginData).subscribe({
         next: (response) => {
           // Handle successful login, e.g., store token, redirect
           this.snack.open('Login realizado com sucesso!', 'Fechar', {
