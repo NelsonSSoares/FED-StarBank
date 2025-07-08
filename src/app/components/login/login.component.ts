@@ -8,7 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { NgxMaskDirective } from 'ngx-mask';
-import { UserService } from '../../services/user.service';
+import { UserService } from '../../services/user/user.service';
 import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
@@ -35,9 +35,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private userService: UserService,
     private authService: AuthService
-  ) {}
+  ) { }
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
       username: ['', [Validators.required, Validators.email]],
@@ -50,6 +49,11 @@ export class LoginComponent implements OnInit {
       const loginData = this.loginForm.value;
       this.authService.loginUser(loginData).subscribe({
         next: (response) => {
+          console.log(response);
+
+          localStorage.setItem('accessToken', response.accessToken);
+          localStorage.setItem('refreshToken', response.refreshToken);
+
           // Handle successful login, e.g., store token, redirect
           this.snack.open('Login realizado com sucesso!', 'Fechar', {
             duration: 3000,

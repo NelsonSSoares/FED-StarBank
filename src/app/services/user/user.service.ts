@@ -1,10 +1,10 @@
-import { UserRequest } from './../models/userRequest';
+import { UserRequest } from '../../models/userRequest';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from '../environments/environment';
-import { Login } from '../models/login';
-import { TokenDTO } from '../models/TokenDTO';
+import { environment } from '../../environments/environment';
+import { Login } from '../../models/login';
+import { TokenDTO } from '../../models/TokenDTO';
 
 @Injectable({
   providedIn: 'root'
