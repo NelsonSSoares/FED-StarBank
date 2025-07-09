@@ -52,16 +52,16 @@ export class LoginComponent implements OnInit {
         next: (response) => {
           console.log(response);
 
-          this.authService.setTokens(response); // Store tokens in local storage
+          this.authService.setTokens(response);
 
-          // Handle successful login, e.g., store token, redirect
-          this.snack.open('Login realizado com sucesso!', 'Fechar', {
+
+        this.snack.open('Login realizado com sucesso!', 'Fechar', {
             duration: 3000,
             horizontalPosition: 'center',
             verticalPosition: 'top'
           });
 
-          this.router.navigate(['/dashboard']); // Redirect to the dashboard or home page
+          this.router.navigate(['/dashboard']);
 
         },
         error: (error) => {
