@@ -6,8 +6,13 @@
         <mat-card-title>Bitcoin</mat-card-title>
         <mat-card-subtitle>Adquira agora Bitcoins em sua carteira</mat-card-subtitle>
       </mat-card-header>
-      <mat-card-content class="mt-20" style="display: flex; justify-content: center;">
+      <mat-card-content class="mt-20" style="display: flex; flex-direction: column; align-items: center;">
         <img src="images/bitcoin.png" alt="Bitcoin" width="60" height="60">
+        <span>Preço: {{ prices().BTC | currency:'USD' }}</span>
+        <div class="movement" [ngClass]="getDirectionClass(directions().BTC)">
+          <mat-icon>{{ getArrowIcon(directions().BTC) }}</mat-icon>
+          <span>{{ directions().BTC }}</span>
+        </div>
       </mat-card-content>
     </mat-card>
   </div>
@@ -19,8 +24,13 @@
         <mat-card-title>Ethereum</mat-card-title>
         <mat-card-subtitle>Adquira agora Ethereum em sua carteira</mat-card-subtitle>
       </mat-card-header>
-      <mat-card-content class="mt-20" style="display: flex; justify-content: center;">
+      <mat-card-content class="mt-20" style="display: flex; flex-direction: column; align-items: center;">
         <img src="images/ethereum.png" alt="Ethereum" width="60" height="60">
+        <span>Preço: {{ prices().ETH | currency:'USD' }}</span>
+        <div class="movement" [ngClass]="getDirectionClass(directions().ETH)">
+          <mat-icon>{{ getArrowIcon(directions().ETH) }}</mat-icon>
+          <span>{{ directions().ETH }}</span>
+        </div>
       </mat-card-content>
     </mat-card>
   </div>
@@ -32,8 +42,13 @@
         <mat-card-title>Dólar</mat-card-title>
         <mat-card-subtitle>Adquira agora Dólares em sua carteira</mat-card-subtitle>
       </mat-card-header>
-      <mat-card-content class="mt-20" style="display: flex; justify-content: center;">
+      <mat-card-content class="mt-20" style="display: flex; flex-direction: column; align-items: center;">
         <img src="images/dollar.png" alt="Dólar" width="60" height="60">
+        <span>Preço: {{ prices().USD | currency:'BRL' }}</span>
+        <div class="movement" [ngClass]="getDirectionClass(directions().USD)">
+          <mat-icon>{{ getArrowIcon(directions().USD) }}</mat-icon>
+          <span>{{ directions().USD }}</span>
+        </div>
       </mat-card-content>
     </mat-card>
   </div>
@@ -45,8 +60,13 @@
         <mat-card-title>Euro</mat-card-title>
         <mat-card-subtitle>Adquira agora Euros em sua carteira</mat-card-subtitle>
       </mat-card-header>
-      <mat-card-content class="mt-20" style="display: flex; justify-content: center;">
+      <mat-card-content class="mt-20" style="display: flex; flex-direction: column; align-items: center;">
         <img src="images/euro.png" alt="Euro" width="60" height="60">
+        <span>Preço: {{ prices().EUR | currency:'USD' }}</span>
+        <div class="movement" [ngClass]="getDirectionClass(directions().EUR)">
+          <mat-icon>{{ getArrowIcon(directions().EUR) }}</mat-icon>
+          <span>{{ directions().EUR }}</span>
+        </div>
       </mat-card-content>
     </mat-card>
   </div>
