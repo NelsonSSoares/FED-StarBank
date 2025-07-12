@@ -8,7 +8,7 @@
       </mat-card-header>
       <mat-card-content class="mt-20" style="display: flex; flex-direction: column; align-items: center;">
         <img src="images/bitcoin.png" alt="Bitcoin" width="60" height="60">
-        <span>Preço: {{ prices().BTC | currency:'USD' }}</span>
+        <span>USD: {{ prices().BTC | currency:'USD' }}</span>
         <div class="movement" [ngClass]="getDirectionClass(directions().BTC)">
           <mat-icon>{{ getArrowIcon(directions().BTC) }}</mat-icon>
           <span>{{ directions().BTC }}</span>
@@ -26,7 +26,7 @@
       </mat-card-header>
       <mat-card-content class="mt-20" style="display: flex; flex-direction: column; align-items: center;">
         <img src="images/ethereum.png" alt="Ethereum" width="60" height="60">
-        <span>Preço: {{ prices().ETH | currency:'USD' }}</span>
+        <span>USD: {{ prices().ETH | currency:'USD' }}</span>
         <div class="movement" [ngClass]="getDirectionClass(directions().ETH)">
           <mat-icon>{{ getArrowIcon(directions().ETH) }}</mat-icon>
           <span>{{ directions().ETH }}</span>
@@ -44,7 +44,7 @@
       </mat-card-header>
       <mat-card-content class="mt-20" style="display: flex; flex-direction: column; align-items: center;">
         <img src="images/dollar.png" alt="Dólar" width="60" height="60">
-        <span>Preço: {{ prices().USD | currency:'BRL' }}</span>
+        <span>BRL: {{ prices().USD | currency:'BRL' }}</span>
         <div class="movement" [ngClass]="getDirectionClass(directions().USD)">
           <mat-icon>{{ getArrowIcon(directions().USD) }}</mat-icon>
           <span>{{ directions().USD }}</span>
@@ -62,7 +62,7 @@
       </mat-card-header>
       <mat-card-content class="mt-20" style="display: flex; flex-direction: column; align-items: center;">
         <img src="images/euro.png" alt="Euro" width="60" height="60">
-        <span>Preço: {{ prices().EUR | currency:'USD' }}</span>
+        <span>USD: {{ prices().EUR | currency:'USD' }}</span>
         <div class="movement" [ngClass]="getDirectionClass(directions().EUR)">
           <mat-icon>{{ getArrowIcon(directions().EUR) }}</mat-icon>
           <span>{{ directions().EUR }}</span>
