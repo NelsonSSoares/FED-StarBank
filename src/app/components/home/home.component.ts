@@ -8,7 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { CryptosService } from '../../services/cryptos/cryptos.service';
 import { CommonModule } from '@angular/common';
-
+import { MatTooltipModule } from '@angular/material/tooltip';
 @Component({
   selector: 'app-home',
   imports: [
@@ -21,6 +21,7 @@ import { CommonModule } from '@angular/common';
     MatInputModule,
     MatIconModule,
     MatButtonModule,
+    MatTooltipModule
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
