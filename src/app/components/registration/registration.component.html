@@ -12,44 +12,61 @@
             <div class="column" fxFlex="100%">
               <mat-form-field class="full-width">
                 <mat-label>Nome: </mat-label>
-                <input type="text" placeholder="José" matInput  formControlName="name" required>
+                <input type="text" placeholder="José" matInput formControlName="name" required>
               </mat-form-field>
+              @if(newUserForm.get('name')?.invalid && newUserForm.get('name')?.touched) {
+              <span class="error"> O nome é obrigatório.</span>
+              }
             </div>
           </div>
 
-           <div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="16px">
+          <div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="16px">
             <div class="column" fxFlex="100%">
               <mat-form-field class="full-width">
                 <mat-label>Sobrenome: </mat-label>
-                <input type="text" placeholder="Silva Santos" matInput  formControlName="lastName" required>
+                <input type="text" placeholder="Silva Santos" matInput formControlName="lastName" required>
               </mat-form-field>
+              @if(newUserForm.get('lastName')?.invalid && newUserForm.get('lastName')?.touched) {
+              <span class="error"> O sobrenome é obrigatório.</span>
+              }
             </div>
           </div>
 
-           <div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="16px">
+          <div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="16px">
             <div class="column" fxFlex="100%">
               <mat-form-field class="full-width">
                 <mat-label>CPF: </mat-label>
-                <input type="text" placeholder="123456789-10" mask="000.000.000-00" matInput  formControlName="cpf" required>
+                <input type="text" placeholder="123456789-10" mask="000.000.000-00" matInput formControlName="cpf"
+                  required>
               </mat-form-field>
+              @if(newUserForm.get('cpf')?.invalid && newUserForm.get('cpf')?.touched) {
+              <span class="error"> O CPF é obrigatório.</span>
+              }
             </div>
           </div>
 
-           <div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="16px">
+          <div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="16px">
             <div class="column" fxFlex="100%">
               <mat-form-field class="full-width">
                 <mat-label>Celular: </mat-label>
-                <input type="text" placeholder="11940028922" mask="(00) 00000-0000" matInput  formControlName="phone" required>
+                <input type="text" placeholder="11940028922" mask="(00) 00000-0000" matInput formControlName="phone"
+                  required>
               </mat-form-field>
+              @if(newUserForm.get('phone')?.invalid && newUserForm.get('phone')?.touched) {
+              <span class="error"> O celular é obrigatório.</span>
+              }
             </div>
           </div>
 
-           <div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="16px">
+          <div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="16px">
             <div class="column" fxFlex="100%">
               <mat-form-field class="full-width">
                 <mat-label>Email: </mat-label>
-                <input type="email" placeholder="teste@teste.com" matInput  formControlName="email" required>
+                <input type="email" placeholder="teste@teste.com" matInput formControlName="email" required>
               </mat-form-field>
+              @if(newUserForm.get('email')?.invalid && newUserForm.get('email')?.touched) {
+              <span class="error"> O email é obrigatório.</span>
+              }
             </div>
           </div>
 
@@ -57,18 +74,24 @@
             <div class="column" fxFlex="100%">
               <mat-form-field class="full-width">
                 <mat-label>Senha: </mat-label>
-                <input type="password" placeholder="********" matInput  formControlName="password" required>
+                <input type="password" placeholder="********" matInput formControlName="password" required>
               </mat-form-field>
+              @if(newUserForm.get('password')?.invalid && newUserForm.get('password')?.touched) {
+              <span class="error"> A senha é obrigatória.</span>
+              }
             </div>
           </div>
         </mat-card-content>
+
         <mat-card-actions>
-         <div fxLayout="row">
-          <div fxLauout="column" class="full-width">
-             <button mat-flat-button color="primary" type="submit"><mat-icon fontIcon="save"></mat-icon> Salvar</button>
-             <button mat-flat-button color="accent" class="ml-5" (click)="resetForm()"><mat-icon fontIcon="backspace"></mat-icon> Limpar</button>
+          <div fxLayout="row">
+            <div fxLauout="column" class="full-width">
+              <button mat-flat-button color="primary" type="submit"><mat-icon fontIcon="save"></mat-icon>
+                Salvar</button>
+              <button mat-flat-button color="accent" class="ml-5" (click)="resetForm()"><mat-icon
+                  fontIcon="backspace"></mat-icon> Limpar</button>
+            </div>
           </div>
-         </div>
         </mat-card-actions>
       </mat-card>
     </form>
