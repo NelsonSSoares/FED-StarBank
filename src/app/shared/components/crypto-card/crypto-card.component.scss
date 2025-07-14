@@ -1,0 +1,20 @@
+.text-green {
+  color: green;
+  font-weight: bold;
+}
+
+.text-red {
+  color: red;
+  font-weight: bold;
+}
+
+.text-muted {
+  color: gray;
+}
+
+.movement {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 4px;
+}

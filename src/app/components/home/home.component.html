@@ -1,140 +1,47 @@
 <!--- TRANSFERIR CARDS PARA UM COMPONENTE REUTILIZAVEL -->
 <div fxLayout="row wrap" fxLayout.md="column" fxLayoutGap="16px" style="justify-content: space-between;">
-
+<!-- fxFlex="20%" fxFlex.sm="100%" fxFlex.xs="100%" class="mt-20" -->
   <!-- Bitcoin -->
+
   <div fxFlex="20%" fxFlex.sm="100%" fxFlex.xs="100%" class="mt-20">
-    <mat-card>
-      <mat-card-header>
-        <mat-card-title>Bitcoin</mat-card-title>
-        <mat-card-subtitle>Adquira agora Bitcoins em sua carteira</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content style="display: flex; flex-direction: column; align-items: center;">
-        <img src="images/bitcoin.png" alt="Bitcoin" width="60" height="60">
-        <span>USD: {{ prices().BTC | currency:'USD' }}</span>
-        <div class="movement" [ngClass]="getDirectionClass(directions().BTC)">
-          <mat-icon>{{ getArrowIcon(directions().BTC) }}</mat-icon>
-          <span>{{ directions().BTC }}</span>
-        </div>
-
-        <div fxLayout="column" fxLayoutAlign="center center" style="gap: 12px; margin-top: 16px;">
-          <mat-form-field appearance="outline" style="width: 100px;">
-            <mat-label>Qtd</mat-label>
-            <input matInput type="number" min="0" >
-          </mat-form-field>
-
-          <div fxLayout="row" fxLayoutAlign="center center" style="gap: 8px;">
-            <button mat-raised-button color="primary" matTooltip="Comprar Bitcoin">
-              <mat-icon>shopping_cart</mat-icon> Comprar
-            </button>
-            <button mat-raised-button color="warn" matTooltip="Vender Bitcoin">
-              <mat-icon>attach_money</mat-icon> Vender
-            </button>
-          </div>
-        </div>
-      </mat-card-content>
-    </mat-card>
-  </div>
-
-  <!-- Ethereum -->
-  <div fxFlex="20%" fxFlex.sm="100%" fxFlex.xs="100%" class="mt-20">
-    <mat-card>
-      <mat-card-header>
-        <mat-card-title>Ethereum</mat-card-title>
-        <mat-card-subtitle>Adquira agora Ethereum em sua carteira</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content style="display: flex; flex-direction: column; align-items: center;">
-        <img src="images/ethereum.png" alt="Ethereum" width="60" height="60">
-        <span>USD: {{ prices().ETH | currency:'USD' }}</span>
-        <div class="movement" [ngClass]="getDirectionClass(directions().ETH)">
-          <mat-icon>{{ getArrowIcon(directions().ETH) }}</mat-icon>
-          <span>{{ directions().ETH }}</span>
-        </div>
-
-        <div fxLayout="column" fxLayoutAlign="center center" style="gap: 12px; margin-top: 16px;">
-          <mat-form-field appearance="outline" style="width: 100px;">
-            <mat-label>Qtd</mat-label>
-            <input matInput type="number" min="0" >
-          </mat-form-field>
-
-          <div fxLayout="row" fxLayoutAlign="center center" style="gap: 8px;">
-            <button mat-raised-button color="primary" matTooltip="Comprar Ethereum">
-              <mat-icon>shopping_cart</mat-icon> Comprar
-            </button>
-            <button mat-raised-button color="warn" matTooltip="Vender Ethereum">
-              <mat-icon>attach_money</mat-icon> Vender
-            </button>
-          </div>
-        </div>
-      </mat-card-content>
-    </mat-card>
-  </div>
-
-  <!-- Dólar -->
-  <div fxFlex="20%" fxFlex.sm="100%" fxFlex.xs="100%" class="mt-20">
-    <mat-card>
-      <mat-card-header>
-        <mat-card-title>Dólar</mat-card-title>
-        <mat-card-subtitle>Adquira agora Dólares em sua carteira</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content style="display: flex; flex-direction: column; align-items: center;">
-        <img src="images/dollar.png" alt="Dólar" width="60" height="60">
-        <span>BRL: {{ prices().USD | currency:'BRL' }}</span>
-        <div class="movement" [ngClass]="getDirectionClass(directions().USD)">
-          <mat-icon>{{ getArrowIcon(directions().USD) }}</mat-icon>
-          <span>{{ directions().USD }}</span>
-        </div>
-
-        <div fxLayout="column" fxLayoutAlign="center center" style="gap: 12px; margin-top: 16px;">
-          <mat-form-field appearance="outline" style="width: 100px;">
-            <mat-label>Qtd</mat-label>
-            <input matInput type="number" min="0" >
-          </mat-form-field>
-
-          <div fxLayout="row" fxLayoutAlign="center center" style="gap: 8px;">
-            <button mat-raised-button color="primary" matTooltip="Comprar Dólar">
-              <mat-icon>shopping_cart</mat-icon> Comprar
-            </button>
-            <button mat-raised-button color="warn" matTooltip="Vender Dólar">
-              <mat-icon>attach_money</mat-icon> Vender
-            </button>
-          </div>
-        </div>
-      </mat-card-content>
-    </mat-card>
-  </div>
-
-  <!-- Euro -->
-  <div fxFlex="20%" fxFlex.sm="100%" fxFlex.xs="100%" class="mt-20">
-    <mat-card>
-      <mat-card-header>
-        <mat-card-title>Euro</mat-card-title>
-        <mat-card-subtitle>Adquira agora Euros em sua carteira</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content style="display: flex; flex-direction: column; align-items: center;">
-        <img src="images/euro.png" alt="Euro" width="60" height="60">
-        <span>USD: {{ prices().EUR | currency:'USD' }}</span>
-        <div class="movement" [ngClass]="getDirectionClass(directions().EUR)">
-          <mat-icon>{{ getArrowIcon(directions().EUR) }}</mat-icon>
-          <span>{{ directions().EUR }}</span>
-        </div>
-
-        <div fxLayout="column" fxLayoutAlign="center center" style="gap: 12px; margin-top: 16px;">
-          <mat-form-field appearance="outline" style="width: 100px;">
-            <mat-label>Qtd</mat-label>
-            <input matInput type="number" min="0" >
-          </mat-form-field>
-
-          <div fxLayout="row" fxLayoutAlign="center center" style="gap: 8px;">
-            <button mat-raised-button color="primary" matTooltip="Comprar Euro">
-              <mat-icon>shopping_cart</mat-icon> Comprar
-            </button>
-            <button mat-raised-button color="warn" matTooltip="Vender Euro">
-              <mat-icon>attach_money</mat-icon> Vender
-            </button>
-          </div>
-        </div>
-      </mat-card-content>
-    </mat-card>
-  </div>
+  <app-crypto-card
+    name="Bitcoin"
+    subtitle="Adquira agora Bitcoins em sua carteira"
+    imageSrc="images/bitcoin.png"
+    [price]="prices().BTC"
+    currencyLabel="USD"
+    [direction]="directions().BTC">
+  </app-crypto-card>
+</div>
+<div fxFlex="20%" fxFlex.sm="100%" fxFlex.xs="100%" class="mt-20">
+  <app-crypto-card
+    name="Ethereum"
+    subtitle="Adquira agora Ethereum em sua carteira"
+    imageSrc="images/ethereum.png"
+    [price]="prices().ETH"
+    currencyLabel="USD"
+    [direction]="directions().ETH">
+  </app-crypto-card>
+</div>
+<div fxFlex="20%" fxFlex.sm="100%" fxFlex.xs="100%" class="mt-20">
+  <app-crypto-card
+    name="Dólar"
+    subtitle="Adquira agora Dólares em sua carteira"
+    imageSrc="images/dollar.png"
+    [price]="prices().USD"
+    currencyLabel="BRL"
+    [direction]="directions().USD">
+  </app-crypto-card>
+</div>
+<div fxFlex="20%" fxFlex.sm="100%" fxFlex.xs="100%" class="mt-20">
+  <app-crypto-card
+    name="Euro"
+    subtitle="Adquira agora Euros em sua carteira"
+    imageSrc="images/euro.png"
+    [price]="prices().EUR"
+    currencyLabel="USD"
+    [direction]="directions().EUR">
+  </app-crypto-card>
+</div>
 
 </div>

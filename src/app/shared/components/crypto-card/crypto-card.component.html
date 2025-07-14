@@ -1,0 +1,35 @@
+<div >
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{ name }}</mat-card-title>
+      <mat-card-subtitle>{{ subtitle }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content style="display: flex; flex-direction: column; align-items: center;">
+      <img [src]="imageSrc" [alt]="name" width="60" height="60" />
+      <span>{{ getCurrencySymbol() }} {{ price | number: '1.2-2' }} ({{ currencyLabel }})</span>
+
+
+      <div class="movement" [ngClass]="getDirectionClass()">
+        <mat-icon>{{ getArrowIcon() }}</mat-icon>
+        <span>{{ direction }}</span>
+      </div>
+
+      <div fxLayout="column" fxLayoutAlign="center center" style="gap: 12px; margin-top: 16px;">
+        <mat-form-field appearance="outline" style="width: 100px;">
+          <mat-label>Qtd</mat-label>
+          <input matInput type="number" min="0" />
+        </mat-form-field>
+
+        <div fxLayout="row" fxLayoutAlign="center center" style="gap: 8px;">
+          <button mat-raised-button color="primary" [matTooltip]="'Comprar ' + name">
+            <mat-icon>shopping_cart</mat-icon> Comprar
+          </button>
+          <button mat-raised-button color="warn" [matTooltip]="'Vender ' + name">
+            <mat-icon>attach_money</mat-icon> Vender
+          </button>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
