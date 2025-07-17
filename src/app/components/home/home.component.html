@@ -1,44 +1,32 @@
 <div fxLayout="row wrap" fxLayout.md="column" fxLayoutGap="16px" style="justify-content: space-between;">
 
   <div fxFlex="20%" fxFlex.sm="100%" fxFlex.xs="100%" class="mt-20">
-  <app-crypto-card
-    name="Bitcoin"
-    subtitle="Adquira agora Bitcoins em sua carteira"
-    imageSrc="images/bitcoin.png"
-    [price]="prices().BTC"
-    currencyLabel="USD"
-    [direction]="directions().BTC">
-  </app-crypto-card>
-</div>
-<div fxFlex="20%" fxFlex.sm="100%" fxFlex.xs="100%" class="mt-20">
-  <app-crypto-card
-    name="Ethereum"
-    subtitle="Adquira agora Ethereum em sua carteira"
-    imageSrc="images/ethereum.png"
-    [price]="prices().ETH"
-    currencyLabel="USD"
-    [direction]="directions().ETH">
-  </app-crypto-card>
-</div>
-<div fxFlex="20%" fxFlex.sm="100%" fxFlex.xs="100%" class="mt-20">
-  <app-crypto-card
-    name="Dólar"
-    subtitle="Adquira agora Dólares em sua carteira"
-    imageSrc="images/dollar.png"
-    [price]="prices().USD"
-    currencyLabel="BRL"
-    [direction]="directions().USD">
-  </app-crypto-card>
-</div>
-<div fxFlex="20%" fxFlex.sm="100%" fxFlex.xs="100%" class="mt-20">
-  <app-crypto-card
-    name="Euro"
-    subtitle="Adquira agora Euros em sua carteira"
-    imageSrc="images/euro.png"
-    [price]="prices().EUR"
-    currencyLabel="USD"
-    [direction]="directions().EUR">
-  </app-crypto-card>
-</div>
+    <app-crypto-card name="Bitcoin" subtitle="Adquira agora Bitcoins em sua carteira" imageSrc="images/bitcoin.png"
+      [price]="prices().BTC" currencyLabel="USD" [direction]="directions().BTC">
+    </app-crypto-card>
+  </div>
+  <div fxFlex="20%" fxFlex.sm="100%" fxFlex.xs="100%" class="mt-20">
+    <app-crypto-card name="Ethereum" subtitle="Adquira agora Ethereum em sua carteira" imageSrc="images/ethereum.png"
+      [price]="prices().ETH" currencyLabel="USD" [direction]="directions().ETH">
+    </app-crypto-card>
+  </div>
+  <div fxFlex="20%" fxFlex.sm="100%" fxFlex.xs="100%" class="mt-20">
+    <app-crypto-card name="Dólar" subtitle="Adquira agora Dólares em sua carteira" imageSrc="images/dollar.png"
+      [price]="prices().USD" currencyLabel="BRL" [direction]="directions().USD">
+    </app-crypto-card>
+  </div>
+  <div fxFlex="20%" fxFlex.sm="100%" fxFlex.xs="100%" class="mt-20">
+    <app-crypto-card name="Euro" subtitle="Adquira agora Euros em sua carteira" imageSrc="images/euro.png"
+      [price]="prices().EUR" currencyLabel="USD" [direction]="directions().EUR">
+    </app-crypto-card>
+  </div>
+  <div fxLayout="row wrap" fxLayout.md="column" fxLayoutGap="16px" style="justify-content: space-between;">
+    <div fxFlex="40%" fxFlex.sm="100%">
 
+    </div>
+    <div fxFlex="40%" fxFlex.sm="100%">
+
+
+    </div>
+  </div>
 </div>

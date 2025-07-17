@@ -1,8 +1,14 @@
-.spacer{
+.spacer {
   flex: 1 1 auto;
 }
-.error{
+
+.error {
   color: red;
   font-size: 0.8em;
   margin-top: 0.5em;
+  line-height: 1.2;
+}
+
+.error-container {
+  min-height: 1.5em; /* ou use 20px, 24px etc. conforme o seu layout */
 }

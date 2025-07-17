@@ -10,11 +10,13 @@ import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserService } from '../../services/user/user.service';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-registration',
   imports: [
+    CommonModule,
     FlexLayoutModule,
     MatCardModule,
     FormsModule,
